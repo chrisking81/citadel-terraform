@@ -10,8 +10,13 @@ resource "azurerm_role_assignment" "keyVaultReader" {
   principal_id         = "${var.kvr_object_id}"
 }
 
+resource "random_string" "rndstr" {
+  length  = "12"
+  special = "false"
+}
+
 resource "azurerm_key_vault" "default" {
-  name                = "keyVault"
+  name                = "keyVault${random_string.rndstr.result}"
   resource_group_name = "${azurerm_resource_group.keyvaults.name}"
   location            = "${azurerm_resource_group.keyvaults.location}"
   tags                = "${azurerm_resource_group.keyvaults.tags}"

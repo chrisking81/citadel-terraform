@@ -16,5 +16,5 @@ variable "tenant_id" {
 }
 
 variable "kvr_object_id" {
-  default = "7d5e4914-4b01-445d-8da9-1ebce1d35715"
+  default = "db323304-8069-4a1c-93f1-8662ec99b11f"
 }
